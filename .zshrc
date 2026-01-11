@@ -24,6 +24,8 @@ alias ls="eza --color=always --long --git --no-permissions --icons=always"
 alias speed="speedtest-cli"
 alias spot="ncspot"
 alias y="yazi"
+alias epic="flatpak run com.heroicgameslauncher.hgl"
+alias roblox="flatpak run org.vinegarhq.Sober"
 
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
@@ -43,3 +45,4 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
 
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme

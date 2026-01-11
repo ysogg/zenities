@@ -11,7 +11,7 @@ return {
     config = function()
       require("mason-lspconfig").setup({
         ensure_installed = {
-          "lua_ls", "html", "jsonls", "jdtls", "sqls", "ts_ls", "cssls", "stylelint_lsp", "tailwindcss", "rust_analyzer"
+          "lua_ls", "html", "jsonls", "jdtls", "sqls", "ts_ls", "cssls", "stylelint_lsp", "tailwindcss", "rust_analyzer", "clangd"
         } -- Install all required LSP servers through Mason
       })
     end
@@ -41,6 +41,15 @@ return {
       lspconfig.prismals.setup({ capabilities = capabilities })
 
       lspconfig.intelephense.setup({ capabilities = capabilities })
+
+      -- C/C++
+      lspconfig.clangd.setup({
+        capabilities = capabilities,
+        cmd = {
+          "clangd",
+          "--query-driver=/usr/bin/g++",
+        },
+      })
 
       -- TypeScript
       lspconfig.ts_ls.setup({
